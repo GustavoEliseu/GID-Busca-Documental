@@ -1,14 +1,67 @@
 <ion-header>
-  <ion-navbar>
+  <!--<ion-navbar>
     <ion-title>
       Ionic Blank
     </ion-title>
-  </ion-navbar>
+  </ion-navbar>-->
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<!-- logo do projeto -->
+  <div class='logo'>
+    <img src="assets/imgs/logo.png">
+  </div>
+
+<!-- Barra de busca *alterar evento input-->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<!-- Busca avançada *aplicar dropdown em busca avançada-->
+  <ion-list>
+      <ion-list-header>
+        Busca avançada
+      </ion-list-header>
+      <!-- *aplicar condições de seleção-->
+      <ion-item>
+        <ion-label>Tipo de busca</ion-label>
+        <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        <ion-select okText="OK" cancelText="Cancelar">
+            <ion-option value="acao">Por título de ação</ion-option>
+            <ion-option value="coordenador">Por coordenador</ion-option>
+        </ion-select>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label>Modalidade</ion-label>
+        <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        <ion-select okText="OK" cancelText="Cancelar">
+            <ion-option value="projeto">Projeto</ion-option>
+            <ion-option value="curso">Curso</ion-option>
+            <ion-option value="evento">Evento</ion-option>
+            <ion-option value="programa">Programa</ion-option>
+            <ion-option value="prestacao">Prestação de serviço</ion-option>
+            <ion-option value="publicacao">Publicação</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Departamento</ion-label>
+        <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        <ion-select okText="OK" cancelText="Cancelar">
+            <ion-option value="acao">Por título de ação</ion-option>
+            <ion-option value="coordenador">Por coordenador</ion-option>
+        </ion-select>
+      </ion-item>
+          
+      <ion-item>
+        <ion-label>Unidade</ion-label>
+        <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        <ion-select okText="OK" cancelText="Cancelar">
+            <ion-option value="acao">Por título de ação</ion-option>
+            <ion-option value="coordenador">Por coordenador</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+        
 </ion-content>
