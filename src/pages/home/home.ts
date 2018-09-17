@@ -17,21 +17,13 @@ export class HomePage {
     valor = $(".dropdown-content").hasClass("show");
     if (valor == true) {
       $(".dropdown-content").removeClass("show");
-      console.log(valor);
     }
     else{
       $(".dropdown-content").addClass("show");
+      if (checked == true){
+        disabled = false;
+      }
     }
-  }
-
-  habilitar(){
-    if (valores == true){
-      $(".item").css({"disabled":"false"});
-    }
-    else{
-      $(".item").css({"disabled":"true"});
-    }
-    
   }
 
 }
