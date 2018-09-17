@@ -10,22 +10,23 @@
 
 <!-- logo do projeto -->
   <div class='logo'>
-    <img src="assets/imgs/logo.png">
+    <img src="assets/imgs/logovertical.png">
   </div>
 
 <!-- Barra de busca *alterar evento input-->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-searchbar  (ionInput)="getItems($event)"
+                  placeholder="Faça sua busca"
+                  clearInput>
+  </ion-searchbar>
 
-<!-- Busca avançada *aplicar dropdown em busca avançada-->
-  <ion-list>
-      <ion-list-header>
-        Busca avançada
-      </ion-list-header>
+  <div class="dropdown">
+    <button (click)="mostrar()" class="dropbtn">Busca avançada</button>
+    <ion-list id="myDropdown" class="dropdown-content">
       <!-- *aplicar condições de seleção-->
       <ion-item>
         <ion-label>Tipo de busca</ion-label>
         <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar">
+        <ion-select class="item" okText="OK" cancelText="Cancelar" disabled="true">
             <ion-option value="acao">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>
@@ -34,7 +35,7 @@
       <ion-item>
         <ion-label>Modalidade</ion-label>
         <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar">
+        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
             <ion-option value="projeto">Projeto</ion-option>
             <ion-option value="curso">Curso</ion-option>
             <ion-option value="evento">Evento</ion-option>
@@ -47,7 +48,7 @@
       <ion-item>
         <ion-label>Departamento</ion-label>
         <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar">
+        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
             <ion-option value="acao">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>
@@ -56,12 +57,13 @@
       <ion-item>
         <ion-label>Unidade</ion-label>
         <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar">
+        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
             <ion-option value="acao">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>
       </ion-item>
 
     </ion-list>
-        
+  </div> 
+  
 </ion-content>
