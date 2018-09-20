@@ -25,17 +25,15 @@
       <!-- *aplicar condições de seleção-->
       <ion-item>
         <ion-label>Tipo de busca</ion-label>
-        <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select class="item" okText="OK" cancelText="Cancelar" disabled="true">
-            <ion-option value="acao">Por título de ação</ion-option>
+        <ion-select class="item" okText="OK" cancelText="Cancelar">
+            <ion-option value="acao" (click)="marcado()">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>
       </ion-item>
         
       <ion-item>
         <ion-label>Modalidade</ion-label>
-        <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
+        <ion-select okText="OK" cancelText="Cancelar">
             <ion-option value="projeto">Projeto</ion-option>
             <ion-option value="curso">Curso</ion-option>
             <ion-option value="evento">Evento</ion-option>
@@ -47,8 +45,7 @@
 
       <ion-item>
         <ion-label>Departamento</ion-label>
-        <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
+        <ion-select okText="OK" cancelText="Cancelar">
             <ion-option value="acao">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>
@@ -56,8 +53,7 @@
           
       <ion-item>
         <ion-label>Unidade</ion-label>
-        <ion-checkbox color="dark" checked="false"></ion-checkbox>
-        <ion-select okText="OK" cancelText="Cancelar" disabled="true">
+        <ion-select okText="OK" cancelText="Cancelar">
             <ion-option value="acao">Por título de ação</ion-option>
             <ion-option value="coordenador">Por coordenador</ion-option>
         </ion-select>

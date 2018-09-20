@@ -6,6 +6,9 @@ import * as $ from 'jquery';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+
+
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
@@ -13,17 +16,13 @@ export class HomePage {
   }
   //função para mostrar e esconder a busca avançada.
   mostrar(){
-    var valor:boolean;
-    valor = $(".dropdown-content").hasClass("show");
-    if (valor == true) {
+    if ($(".dropdown-content").hasClass("show") == true) {
       $(".dropdown-content").removeClass("show");
     }
     else{
       $(".dropdown-content").addClass("show");
-      if (checked == true){
-        disabled = false;
-      }
     }
   }
-
+  
+  
 }
