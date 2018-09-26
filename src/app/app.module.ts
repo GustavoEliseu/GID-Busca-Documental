@@ -6,12 +6,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AcaoPage } from '../pages/acao/acao';
+import { ResultadosPage } from '../pages/resultados/resultados';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AcaoPage,
+    ResultadosPage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AcaoPage,
+    ResultadosPage
   ],
   providers: [
     StatusBar,
