@@ -5,14 +5,41 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title class="titulo">Resultados</ion-title>
   </ion-navbar>
-
+  <ion-searchbar  (ionInput)="getItems($event)"
+                  placeholder="Faça sua busca"
+                  clearInput>
+  </ion-searchbar>
 </ion-header>
 
 
 <ion-content padding>
-  
+
+  <ion-card class="card" (click)="irParaAcao()">
+      <ion-card-content class="conteudo">
+        <p class="texto"><b class="textodestacado">Ação:</b> Projeto de preservação e acompanhamento dos servidores com problemas decorrentes do uso/abuso do álcool e outras drogas</p><br>
+        <p class="texto"><b class="textodestacado">Coordenador(es):</b> Ana Paula Oliveira de Carvalho</p><br>
+        <p class="texto"><b class="textodestacado">Localização:</b> BE.C13.A1</p><br>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card" (click)="irParaAcao()">
+      <ion-card-content class="conteudo">
+        <p class="texto"><b class="textodestacado">Ação:</b> Projeto de preservação e acompanhamento dos servidores com problemas decorrentes do uso/abuso do álcool e outras drogas</p><br>
+        <p class="texto"><b class="textodestacado">Coordenador(es):</b> Ana Paula Oliveira de Carvalho</p><br>
+        <p class="texto"><b class="textodestacado">Localização:</b> BE.C13.A1</p><br>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card" (click)="irParaAcao()">
+      <ion-card-content class="conteudo">
+        <p class="texto"><b class="textodestacado">Ação:</b> Projeto de preservação e acompanhamento dos servidores com problemas decorrentes do uso/abuso do álcool e outras drogas</p><br>
+        <p class="texto"><b class="textodestacado">Coordenador(es):</b> Ana Paula Oliveira de Carvalho</p><br>
+        <p class="texto"><b class="textodestacado">Localização:</b> BE.C13.A1</p><br>
+      </ion-card-content>
+  </ion-card>
+
+    
 </ion-content>

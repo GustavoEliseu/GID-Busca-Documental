@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AcaoPage } from '../acao/acao';
+
 /**
  * Generated class for the ResultadosPage page.
  *
@@ -20,6 +22,10 @@ export class ResultadosPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultadosPage');
+  }
+
+  irParaAcao(){
+    this.navCtrl.push(AcaoPage);
   }
 
 }
