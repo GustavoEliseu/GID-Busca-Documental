@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import * as $ from 'jquery';
 
-import { AcaoPage } from '../acao/acao';
 import { ResultadosPage } from '../resultados/resultados';
 
 @Component({
@@ -27,13 +26,8 @@ export class HomePage {
     }
   }
 
-  irParaAcao(){
-    this.navCtrl.push(AcaoPage);
-  }
-
   irParaResultados(){
     this.navCtrl.push(ResultadosPage);
   }
-  
   
 }

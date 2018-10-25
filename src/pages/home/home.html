@@ -7,62 +7,83 @@
 </ion-header>
 
 <ion-content padding>
-
-<!-- logo do projeto -->
-  <div class='logo'>
-    <img src="assets/imgs/logovertical.png">
-  </div>
-
-<!-- Barra de busca *alterar evento input-->
-  <ion-searchbar  (ionInput)="getItems($event)"
-                  placeholder="Faça sua busca"
-                  clearInput>
-  </ion-searchbar>
-
-  <div class="dropdown">
-    <button (click)="mostrar()" class="dropbtn">Busca avançada</button>
-    <ion-list id="myDropdown" class="dropdown-content">
-      <!-- *aplicar condições de seleção-->
-      <ion-item>
-        <ion-label>Tipo de busca</ion-label>
-        <ion-select class="item" okText="OK" cancelText="Cancelar">
-            <ion-option value="acao" (click)="marcado()">Por título de ação</ion-option>
-            <ion-option value="coordenador">Por coordenador</ion-option>
-        </ion-select>
-      </ion-item>
-        
-      <ion-item>
-        <ion-label>Modalidade</ion-label>
-        <ion-select okText="OK" cancelText="Cancelar">
-            <ion-option value="projeto">Projeto</ion-option>
-            <ion-option value="curso">Curso</ion-option>
-            <ion-option value="evento">Evento</ion-option>
-            <ion-option value="programa">Programa</ion-option>
-            <ion-option value="prestacao">Prestação de serviço</ion-option>
-            <ion-option value="publicacao">Publicação</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Departamento</ion-label>
-        <ion-select okText="OK" cancelText="Cancelar">
-            <ion-option value="acao">Por título de ação</ion-option>
-            <ion-option value="coordenador">Por coordenador</ion-option>
-        </ion-select>
-      </ion-item>
-          
-      <ion-item>
-        <ion-label>Unidade</ion-label>
-        <ion-select okText="OK" cancelText="Cancelar">
-            <ion-option value="acao">Por título de ação</ion-option>
-            <ion-option value="coordenador">Por coordenador</ion-option>
-        </ion-select>
-      </ion-item>
-
-    </ion-list>
-  </div> 
-  
-
-  <button (click)="irParaAcao()" class="dropbtn">Ação</button>
-  <button (click)="irParaResultados()" class="dropbtn">Resultados</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- logo do projeto -->
+        <div class='logo'>
+          <img src="assets/imgs/logovertical.png">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-around>
+      <ion-col>
+        <!-- Barra de busca *alterar evento input-->
+        <ion-searchbar
+              (ionInput)="getItems($event)"
+              placeholder="Faça sua busca"
+              clearInput>
+        </ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-around>
+        <ion-col>
+          <!-- Barra de busca *alterar evento input-->
+          <form action=" " method="post">
+            <label for="busca">Buscar</label>
+            <input type="search" id="busca" name="q">
+            <button type="submit">OK</button>
+          </form>
+        </ion-col>
+      </ion-row>
+    <ion-row justify-content-around>
+      <ion-col col-7>
+          <h1 (click)="mostrar()" class="btnresultado">Busca avançada</h1>
+      </ion-col>
+      <ion-col col-12>
+        <div class="dropdown">
+          <ion-list id="myDropdown" class="dropdown-content">
+            <!-- *aplicar condições de seleção-->
+            <ion-item>
+              <ion-label>Tipo de busca</ion-label>
+              <ion-select class="item" okText="OK" cancelText="Cancelar">
+                <ion-option value="acao">Por nome de ação</ion-option>
+                <ion-option value="coordenador">Por coordenador</ion-option>
+              </ion-select>
+            </ion-item>         
+            <ion-item>
+              <ion-label>Modalidade</ion-label>
+              <ion-select okText="OK" cancelText="Cancelar">
+                <ion-option value="projeto">Projeto</ion-option>
+                <ion-option value="curso">Curso</ion-option>
+                <ion-option value="evento">Evento</ion-option>
+                <ion-option value="programa">Programa</ion-option>
+                <ion-option value="prestacao">Prestação de serviço</ion-option>
+                <ion-option value="publicacao">Publicação</ion-option>
+              </ion-select>
+            </ion-item>
+              <ion-item>
+                <ion-label>Departamento</ion-label>
+                <ion-select okText="OK" cancelText="Cancelar">
+                  <ion-option value="acao">Por título de ação</ion-option>
+                  <ion-option value="coordenador">Por coordenador</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-label>Unidade</ion-label>
+                <ion-select okText="OK" cancelText="Cancelar">
+                  <ion-option value="acao">Por título de ação</ion-option>
+                  <ion-option value="coordenador">Por coordenador</ion-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>
+        </div> 
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-around>
+      <ion-col col-7>
+        <h1 (click)="irParaResultados()" class="dropbtn">Resultados</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
