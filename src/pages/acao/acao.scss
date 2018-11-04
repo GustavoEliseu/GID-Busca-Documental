@@ -6,6 +6,14 @@ page-acao {
         text-transform: uppercase;
         font-weight: bold;
     }*/
+    .card{
+        background-color: rgb(231, 231, 231);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 0px 10px 10px 0px;
+        border-left-style: solid;
+        border-color: dodgerblue;
+        border-width: 3px;
+    }
     .texto{
         color: black;
         font-size:4vw;
@@ -15,7 +23,6 @@ page-acao {
         text-transform: uppercase;
         font-weight: bold;
         font-size:4vw;
-
     }
 
 }

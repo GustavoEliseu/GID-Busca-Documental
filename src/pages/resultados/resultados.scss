@@ -10,5 +10,19 @@ page-resultados {
     .conteudo{
         line-height: 0.4; 
     }
+    .texto{
+        color: black;
+        font-size:4vw;
+    }
+    .textodestacado{
+        color: dodgerblue;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size:4vw;
+    }
+    .titulo {
+        display: inline;
+    }
+    .show {display:none;}
 
 }

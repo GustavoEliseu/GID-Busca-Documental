@@ -6,17 +6,25 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title class="titulo">Resultados</ion-title>
-  </ion-navbar>
-  <ion-searchbar  (ionInput)="getItems($event)"
+  <ion-title class="titulo">Resultados</ion-title>
+    <ion-searchbar
+                  *ngIf="isSearchbarOpened" 
+                  showCancelButton="true"
+                  (ionCancel)="isSearchbarOpened=false"
+                  (search)="onSearch($event)"
                   placeholder="Faça sua busca"
                   clearInput>
-  </ion-searchbar>
+    </ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search" (click)="barrabusca()"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-
   <ion-card class="card" (click)="irParaAcao()">
       <ion-card-content class="conteudo">
         <p class="texto"><b class="textodestacado">Ação:</b> Projeto de preservação e acompanhamento dos servidores com problemas decorrentes do uso/abuso do álcool e outras drogas</p><br>
