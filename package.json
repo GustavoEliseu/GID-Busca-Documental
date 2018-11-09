@@ -26,6 +26,8 @@
     "@ionic/pro": "2.0.3",
     "@ionic/storage": "2.1.3",
     "@types/jquery": "^3.3.6",
+    "angularfire2": "^5.1.0",
+    "firebase": "^5.5.8",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "jquery": "^3.3.1",
