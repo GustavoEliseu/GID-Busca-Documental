@@ -3,11 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as $ from 'jquery';
 import { AcaoPage } from '../acao/acao';
 import { Observable } from 'rxjs';
-import { AngularFireModule } from 'angularfire2'
 import {Projeto} from "../projeto.interface"
 import { AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database'
 import { AngularFirestore } from 'angularfire2/firestore';
 /**
  * Generated class for the ResultadosPage page.
