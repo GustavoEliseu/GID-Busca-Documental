@@ -20,22 +20,14 @@
       <ion-col>
         <!-- Barra de busca *alterar evento input-->
         <ion-searchbar
-              (ionInput)="getItems($event)"
+              class ="mySearchBar"
+              [(ngModel)]="busca"
               placeholder="Faça sua busca"
               clearInput>
         </ion-searchbar>
+        
       </ion-col>
     </ion-row>
-    <ion-row justify-content-around>
-        <ion-col>
-          <!-- Barra de busca *alterar evento input-->
-          <form action=" " method="post">
-            <label for="busca">Buscar</label>
-            <input type="search" id="busca" name="q">
-            <button type="submit">OK</button>
-          </form>
-        </ion-col>
-      </ion-row>
     <ion-row justify-content-around>
       <ion-col col-7>
           <h1 (click)="mostrar()" class="btnresultado">Busca avançada</h1>
@@ -46,9 +38,9 @@
             <!-- *aplicar condições de seleção-->
             <ion-item>
               <ion-label>Tipo de busca</ion-label>
-              <ion-select class="item" okText="OK" cancelText="Cancelar">
-                <ion-option value="acao">Por nome de ação</ion-option>
-                <ion-option value="coordenador">Por coordenador</ion-option>
+              <ion-select [(ngModel)]="coordOuAcao" class="item" okText="OK" cancelText="Cancelar">
+                <ion-option onselect="select1(true)" value="acao">Por nome de ação</ion-option>
+                <ion-option onselect="select1(false)" value="coordenador">Por coordenador</ion-option>
               </ion-select>
             </ion-item>         
             <ion-item>

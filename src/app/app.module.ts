@@ -9,18 +9,11 @@ import { HomePage } from '../pages/home/home';
 import { AcaoPage } from '../pages/acao/acao';
 import { ResultadosPage } from '../pages/resultados/resultados';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { AngularFireModule } from 'angularfire2'
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database'
-
-
-var config = {
-  apiKey: "AIzaSyC-cCD_CaAUJAG9OCT4RuSX2oWYWBezgq0",
-  authDomain: "gid-busca-documental.firebaseapp.com",
-  databaseURL: "https://gid-busca-documental.firebaseio.com",
-  projectId: "gid-busca-documental",
-  storageBucket: "gid-busca-documental.appspot.com",
-  messagingSenderId: "981290136032"
-};
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { firebaseConfig } from './credentials';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database'
 
 
 @NgModule({
@@ -32,9 +25,10 @@ var config = {
   ],
   imports: [
     BrowserModule,
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
