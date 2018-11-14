@@ -39,35 +39,22 @@
             <ion-item>
               <ion-label>Tipo de busca</ion-label>
               <ion-select [(ngModel)]="coordOuAcao" class="item" okText="OK" cancelText="Cancelar">
-                <ion-option onselect="select1(true)" value="acao">Por nome de ação</ion-option>
-                <ion-option onselect="select1(false)" value="coordenador">Por coordenador</ion-option>
+                <ion-option onselect="select1(true)" value="nomlower">Por nome de ação</ion-option>
+                <ion-option onselect="select1(false)" value="coordlower">Por coordenador</ion-option>
               </ion-select>
             </ion-item>         
             <ion-item>
               <ion-label>Modalidade</ion-label>
-              <ion-select okText="OK" cancelText="Cancelar">
-                <ion-option value="projeto">Projeto</ion-option>
-                <ion-option value="curso">Curso</ion-option>
-                <ion-option value="evento">Evento</ion-option>
-                <ion-option value="programa">Programa</ion-option>
-                <ion-option value="prestacao">Prestação de serviço</ion-option>
-                <ion-option value="publicacao">Publicação</ion-option>
+              <ion-select [(ngModel)]="modSelecionada" okText="OK" cancelText="Cancelar">
+                <ion-option value="Todas">Todas</ion-option>
+                <ion-option value="Projeto">Projeto</ion-option>
+                <ion-option value="Curso">Curso</ion-option>
+                <ion-option value="Evento">Evento</ion-option>
+                <ion-option value="Programa">Programa</ion-option>
+                <ion-option value="Prestação de serviço">Prestação de serviço</ion-option>
+                <ion-option value="Publicação">Publicação</ion-option>
               </ion-select>
             </ion-item>
-              <ion-item>
-                <ion-label>Departamento</ion-label>
-                <ion-select okText="OK" cancelText="Cancelar">
-                  <ion-option value="acao">Por título de ação</ion-option>
-                  <ion-option value="coordenador">Por coordenador</ion-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Unidade</ion-label>
-                <ion-select okText="OK" cancelText="Cancelar">
-                  <ion-option value="acao">Por título de ação</ion-option>
-                  <ion-option value="coordenador">Por coordenador</ion-option>
-                </ion-select>
-              </ion-item>
           </ion-list>
         </div> 
       </ion-col>

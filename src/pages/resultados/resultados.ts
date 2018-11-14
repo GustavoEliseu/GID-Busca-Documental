@@ -23,6 +23,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class ResultadosPage {
   busca: string;
   coordenadorOuAcao: string;
+  modSelecionada:string;
 
 
 
@@ -35,8 +36,16 @@ export class ResultadosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public afAuth: AngularFireAuth, afs: AngularFirestore) {
   this.busca = navParams.get('minhaBusca');
   this.coordenadorOuAcao = navParams.get('coordenadorOuAcao');
+  this.modSelecionada=navParams.get('modSelecionada');
   this.afAuth.auth.signInAnonymously();
-  this.projetosCollectionRef = afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao).startAt(this.busca).endAt(this.busca + '\uf8ff'));
+  if(this.modSelecionada==="Todas"){
+    this.projetosCollectionRef = afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
+    .startAt(this.busca).endAt(this.busca + '\uf8ff'));
+  
+  } else{
+    this.projetosCollectionRef = afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
+    .where("modelo","==",this.modSelecionada).startAt(this.busca).endAt(this.busca + '\uf8ff'));
+  }
   this.projetos = this.projetosCollectionRef.valueChanges();
   }
 
