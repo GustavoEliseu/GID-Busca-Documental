@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Projeto} from "../projeto.interface"
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -14,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'acao.html',
 })
 export class AcaoPage {
+  acao:Projeto;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.acao= navParams.get('projeto');
   }
 
   ionViewDidLoad() {
