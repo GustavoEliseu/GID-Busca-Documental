@@ -11,7 +11,7 @@ import { ResultadosPage } from '../resultados/resultados';
 
 
 export class HomePage {
-  busca:string;
+  busca="";
   modSelecionada="Todas";
   coordOuAcao="nomlower";
   constructor(public navCtrl: NavController) {
@@ -28,8 +28,15 @@ export class HomePage {
   }
 
   irParaResultados(){
+    /*let essaBusca= "";
+    
+    if(this.busca.length>0){
+      essaBusca=
+    }else{
+      essaBusca=this.busca;
+    }*/
     this.navCtrl.push(ResultadosPage,{
-      minhaBusca: this.busca.toLowerCase(),
+      minhaBusca:this.busca.toLowerCase(),
       modSelecionada: this.modSelecionada,
       coordenadorOuAcao: this.coordOuAcao
     });
