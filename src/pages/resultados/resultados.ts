@@ -47,7 +47,6 @@ export class ResultadosPage {
     if(this.modSelecionada==="Todas"){
       this.projetosCollectionRef = this.afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
       .startAt(this.busca).endAt(this.busca + '\uf8ff'));
-    
     } else{
       this.projetosCollectionRef = this.afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
       .where("modelo","==",this.modSelecionada).startAt(this.busca).endAt(this.busca + '\uf8ff'));
