@@ -24,7 +24,7 @@ export class ResultadosPage {
   busca: string;
   coordenadorOuAcao: string;
   modSelecionada:string;
-
+  afs:AngularFirestore;
 
 
   projetos: Observable<Projeto[]>;
@@ -38,19 +38,25 @@ export class ResultadosPage {
   this.coordenadorOuAcao = navParams.get('coordenadorOuAcao');
   this.modSelecionada=navParams.get('modSelecionada');
   this.afAuth.auth.signInAnonymously();
-  if(this.modSelecionada==="Todas"){
-    this.projetosCollectionRef = afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
-    .startAt(this.busca).endAt(this.busca + '\uf8ff'));
+  this.afs=afs;
+  this.realizarBusca()
+   
+  }
   
-  } else{
-    this.projetosCollectionRef = afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
-    .where("modelo","==",this.modSelecionada).startAt(this.busca).endAt(this.busca + '\uf8ff'));
+  realizarBusca(){
+    if(this.modSelecionada==="Todas"){
+      this.projetosCollectionRef = this.afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
+      .startAt(this.busca).endAt(this.busca + '\uf8ff'));
+    } else{
+      this.projetosCollectionRef = this.afs.collection('BancoDeDados',ref=> ref.orderBy(this.coordenadorOuAcao)
+      .where("modelo","==",this.modSelecionada).startAt(this.busca).endAt(this.busca + '\uf8ff'));
+    }
+    this.projetos = this.projetosCollectionRef.valueChanges();
   }
-  this.projetos = this.projetosCollectionRef.valueChanges();
-  }
-
+  
   onSearch(event){
-    console.log(event.target.value);
+    this.busca =event.target.value;
+    this.realizarBusca();
     
     }
 
