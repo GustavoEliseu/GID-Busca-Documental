@@ -13,23 +13,6 @@
         </ion-navbar>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-          <ion-searchbar
-                  *ngIf="isSearchbarOpened" 
-                  showCancelButton="true"
-                  (ionCancel)="isSearchbarOpened=false"
-                  (search)="onSearch($event)"
-                  placeholder="Faça sua busca"
-                  clearInput>
-          </ion-searchbar>
-          <ion-buttons end>
-            <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
-              <ion-icon name="search" (click)="barrabusca()"></ion-icon>
-            </button>
-          </ion-buttons>
-      </ion-col>
-    </ion-row>
   </ion-grid>
 </ion-header>
 

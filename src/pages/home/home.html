@@ -29,17 +29,14 @@
       </ion-col>
     </ion-row>
     <ion-row justify-content-around>
-      <ion-col col-7>
-          <h1 (click)="mostrar()" class="btnresultado">Busca avançada</h1>
-      </ion-col>
+      
       <ion-col col-12>
-        <div class="dropdown">
+
           <ion-list id="myDropdown" class="dropdown-content">
-            <!-- *aplicar condições de seleção-->
             <ion-item>
               <ion-label>Tipo de busca</ion-label>
               <ion-select [(ngModel)]="coordOuAcao" class="item" okText="OK" cancelText="Cancelar">
-                <ion-option onselect="select1(true)" value="nomlower">Por nome de ação</ion-option>
+                <ion-option onselect="select1(true)" value="nomlower">Por ação</ion-option>
                 <ion-option onselect="select1(false)" value="coordlower">Por coordenador</ion-option>
               </ion-select>
             </ion-item>         
@@ -56,12 +53,12 @@
               </ion-select>
             </ion-item>
           </ion-list>
-        </div> 
+
       </ion-col>
     </ion-row>
     <ion-row justify-content-around>
       <ion-col col-7>
-        <h1 (click)="irParaResultados()" class="dropbtn">Resultados</h1>
+        <h1 (click)="irParaResultados()" class="dropbtn">Buscar</h1>
       </ion-col>
     </ion-row>
   </ion-grid>
